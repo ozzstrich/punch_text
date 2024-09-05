@@ -43,3 +43,10 @@ function toggleMute() {
         icon.classList.add('fa-volume-up');
     }
 }
+
+function enterText(event) {
+    if (event.key === "Enter") {
+        addMessage();
+    }
+}
+

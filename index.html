@@ -13,7 +13,7 @@
     <div class="container">
         <h1>Punch Text</h1>
         <p>Enter your message below:</p>
-        <input type="text" id="coolInput" placeholder="Type something cool...">
+        <input type="text" id="coolInput" placeholder="Type something cool...", onkeypress="enterText(event)">
         <button onclick="addMessage()">PUNCH</button>
         <button id="muteButton" onclick="toggleMute()">
             <i class="fas fa-volume-up"></i>
