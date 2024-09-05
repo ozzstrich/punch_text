@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #2d0044;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+    text-align: center;
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+h1 {
+    color: #bf00ff;
+    margin-bottom: 1rem;
+}
+
+input[type="text"] {
+    width: calc(100% - 1rem);
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #3d005c;
+    color: #fff;
+}
+
+button {
+    background-color: #bf00ff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #9900cc;
+}
+
+#messageContainer {
+    margin-top: 1rem;
+    overflow-y: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+}
+
+.message {
+    background-color: #3d005c;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    max-width: 80%;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#muteButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: #bf00ff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#muteButton:hover {
+    color: #9900cc;
+}
