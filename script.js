@@ -12,17 +12,22 @@ function addMessage() {
 
         messageContainer.insertBefore(messageElement, messageContainer.firstChild);
 
+        messageElement.style.animation = 'none';
+        messageElement.offsetHeight; // Trigger reflow
+        messageElement.style.animation = null;
+
         input.value = '';
 
         if (!isMuted) {
-            dingSound.play();
+            dingSound.play().catch(error => console.log('Audio play failed:', error));
         }
 
-        if (messageContainer.children.length > 9) {
+        if (messageContainer.children.length > 5) {
             messageContainer.removeChild(messageContainer.lastChild);
         }
     }
 }
+
 
 function toggleMute() {
     const muteButton = document.getElementById('muteButton');

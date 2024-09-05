@@ -70,7 +70,53 @@ button:hover {
     max-width: 80%;
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInUp 0.5s forwards;
+    animation: fadeInUp 0.2s forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+.message::before,
+.message::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #ffeb3b;
+    opacity: 0;
+    animation: sparkle 1s ease-in-out;
+}
+
+.message::before {
+    top: 10%;
+    left: 10%;
+}
+
+.message::after {
+    bottom: 10%;
+    right: 10%;
+}
+
+.message::nth-child(3),
+.message::nth-child(4) {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #ff00ff;
+    opacity: 0;
+    animation: sparkle 1.2s ease-in-out 0.2s;
+}
+
+.message::nth-child(3) {
+    top: 50%;
+    left: 20%;
+}
+
+.message::nth-child(4) {
+    bottom: 30%;
+    right: 25%;
 }
 
 @keyframes fadeInUp {
@@ -79,6 +125,24 @@ button:hover {
         transform: translateY(0);
     }
 }
+
+@keyframes sparkle {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1) rotate(180deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0) rotate(360deg);
+    }
+}
+
 
 #muteButton {
     position: absolute;
